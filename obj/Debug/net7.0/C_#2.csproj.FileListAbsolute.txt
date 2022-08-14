@@ -1,0 +1,15 @@
+C:\Users\Intel\Desktop\C_#2\bin\Debug\net7.0\C_#2.exe
+C:\Users\Intel\Desktop\C_#2\bin\Debug\net7.0\C_#2.deps.json
+C:\Users\Intel\Desktop\C_#2\bin\Debug\net7.0\C_#2.runtimeconfig.json
+C:\Users\Intel\Desktop\C_#2\bin\Debug\net7.0\C_#2.dll
+C:\Users\Intel\Desktop\C_#2\bin\Debug\net7.0\C_#2.pdb
+C:\Users\Intel\Desktop\C_#2\obj\Debug\net7.0\C_#2.csproj.AssemblyReference.cache
+C:\Users\Intel\Desktop\C_#2\obj\Debug\net7.0\C_#2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Intel\Desktop\C_#2\obj\Debug\net7.0\C_#2.AssemblyInfoInputs.cache
+C:\Users\Intel\Desktop\C_#2\obj\Debug\net7.0\C_#2.AssemblyInfo.cs
+C:\Users\Intel\Desktop\C_#2\obj\Debug\net7.0\C_#2.csproj.CoreCompileInputs.cache
+C:\Users\Intel\Desktop\C_#2\obj\Debug\net7.0\C_#2.dll
+C:\Users\Intel\Desktop\C_#2\obj\Debug\net7.0\refint\C_#2.dll
+C:\Users\Intel\Desktop\C_#2\obj\Debug\net7.0\C_#2.pdb
+C:\Users\Intel\Desktop\C_#2\obj\Debug\net7.0\C_#2.genruntimeconfig.cache
+C:\Users\Intel\Desktop\C_#2\obj\Debug\net7.0\ref\C_#2.dll
