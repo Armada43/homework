@@ -1,62 +1,132 @@
-﻿// Задача 19: Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
-// 14212 -> нет
-// 23432 -> да
-// 12821 -> да
+﻿// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+// 3, 5 -> 243 (3⁵)
+// 2, 4 -> 16
 
-/*Console.Write("Введите число: ");
-string num = Console.ReadLine();
-
-void CheckingNumber(string num)
+/*int Exponentiation(int numbA, int numbB)
 {
-  if (num[0]==num[4] || num[1]==num[3])
+  int result = 1;
+  for(int i=1; i <= numbB; i++)
   {
-    Console.WriteLine($"Ваше число: {num} - палиндром.");
+    result = result * numbA;
   }
-  else Console.WriteLine($"Ваше число: {num} - НЕ палиндром.");
+    // int result = Math.Pow(numbA, numbB);
+    return result;
 }
 
-if (num!.Length == 5)
-{
-  CheckingNumber(num);
+  Console.Write("Введите число A: ");
+  int numbA = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Введите число B: ");
+  int numbB = Convert.ToInt32(Console.ReadLine());
+
+  int exponentiation = Exponentiation(numbA, numbB);
+  Console.WriteLine("Ответ: " + exponentiation);*/
+
+  // Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+// 452 -> 11
+// 82 -> 10
+// 9012 -> 12
+
+/*Console.Write("Введите число N: ");
+int numberN = Convert.ToInt32(Console.ReadLine());
+
+  int SumNumber(int numberN)
+  {
+    
+    int counter = Convert.ToString(numberN).Length;
+    int advance = 0;
+    int result = 0;
+
+    for (int i = 0; i < counter; i++)
+    {
+      advance = numberN - numberN % 10;
+      result = result + (numberN - advance);
+      numberN = numberN / 10;
+    }
+   return result;
+  }
+
+int sumNumber = SumNumber(numberN);
+Console.WriteLine("Сумма цифр в числе: " + sumNumber);*/
+
+// Задача 29: Напишите программу, которая задаёт массив из N элементов и выводит их на экран.
+// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+// 6, 1, 33 -> [6, 1, 33]
+Console.Write("Введите ряд чисел, разделенных запятой : ");
+string? seriesOfNumbers = Console.ReadLine();
+
+seriesOfNumbers = seriesOfNumbers + ",";    // дополнительня запятая для обозначения конца строки
+
+// функция удаления пробелов из строки 
+string RemovingSpaces (string series){
+  string seriesNew = "";
+  for (int i = 0; i < series.Length; i++)
+  {
+    if (series[i] != ' ') 
+    {
+      seriesNew += series[i];
+    }
+  }
+  return seriesNew;
 }
-else Console.WriteLine($"Введи правильное число");*/
 
-// Задача 21: Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
-// A (3,6,8); B (2,1,-7), -> 15.84
-// A (7,-5, 0); B (1,-1,9) -> 11.53
+//  функция  проверки на правильность ввода 
+void СheckNumber2 (int  series){
 
-/*int x1 = Coordinate("x", "A");
-int y1 = Coordinate("y", "A");
-int z1 = Coordinate("z", "A");
-int x2 = Coordinate("x", "B");
-int y2 = Coordinate("y", "B");
-int z2 = Coordinate("z", "B");
+      if (series == '0'||series == '1'||series == '2'
+      ||series == '3'||series == '4'||series == '5'||series == '6'
+      ||series == '7'||series == '8'||series == '9'||series == ','
+      ||series == '-')
+      {
+      }
+        else {
+          Console.WriteLine($"Ошибка ввода  символа. Вводи цифры.");
 
-int Coordinate(string coorName, string pointName)
-{
-    Console.Write($"Введите координату {coorName} точки {pointName}: ");
-    return Convert.ToInt16(Console.ReadLine());
+      }
 }
 
-double Decision(double x1, double x2, 
-                double y1, double y2, 
-                double z1, double z2){
-  return Math.Sqrt(Math.Pow((x2-x1), 2) + 
-                   Math.Pow((y2-y1), 2) + 
-                   Math.Pow((z2-z1), 2));
+// функция  создания и заполнения массива из строки
+int[] ArrayOfNumbers(string seriesNew)
+{ 
+
+  int[] arrayOfNumbers = new int[1];    // инициализация массива из 1 элемента
+
+  int j =0;
+
+  for (int i = 0; i < seriesNew.Length; i++){
+    string seriesNew1 = "";
+
+    while (seriesNew[i] != ',' && i < seriesNew.Length){
+      seriesNew1 += seriesNew[i];
+      СheckNumber2(seriesNew[i]);
+      i++;
+    }
+    arrayOfNumbers[j] = Convert.ToInt32(seriesNew1);    // заполняет массив значениями из строки
+    if (i < seriesNew.Length-1){
+      arrayOfNumbers = arrayOfNumbers.Concat(new int[] {0}).ToArray();    // добавляет новый нулевой элемент в конец массива
+    }
+    j++;
+  }
+  return arrayOfNumbers;
 }
 
-double segmentLength =  Math.Round (Decision(x1, x2, y1, y2, z1, z2), 2 );
+// функция  вывода массива на печать 
+void PrintArry(int[] coll){
+  int count = coll.Length;
+  int index = 0;
+  Console.Write("[");
+  while(index < count){
+    Console.Write(coll[index]);
+    index++;
+    if (index < count){
+      Console.Write(", ");
+    }
+  }
+  Console.Write("]");
+} 
 
-Console.WriteLine($"Расстояние равно  {segmentLength}");*/
 
-//Задача 23: Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
-// 3 -> 1, 8, 27
-// 5 -> 1, 8, 27, 64, 125
+string seriesNew = RemovingSpaces(seriesOfNumbers);
 
-Console.Write("Введите число: ");
-int N = Convert.ToInt32(Console.ReadLine());
-for (int i = 0; i <= N; i++)       
-{
-  Console.WriteLine($"{i} x {i} x {i}= {i*i*i}");
-}
+int[] arrayOfNumbers =  ArrayOfNumbers(seriesNew);
+
+PrintArry(arrayOfNumbers);
