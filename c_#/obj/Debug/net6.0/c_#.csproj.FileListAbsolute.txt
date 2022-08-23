@@ -1,0 +1,15 @@
+C:\Users\Asus\Desktop\c_#\obj\Debug\net6.0\c_#.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\c_#\obj\Debug\net6.0\c_#.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\Desktop\c_#\obj\Debug\net6.0\c_#.AssemblyInfoInputs.cache
+C:\Users\Asus\Desktop\c_#\obj\Debug\net6.0\c_#.AssemblyInfo.cs
+C:\Users\Asus\Desktop\c_#\obj\Debug\net6.0\c_#.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\c_#\bin\Debug\net6.0\c_#.exe
+C:\Users\Asus\Desktop\c_#\bin\Debug\net6.0\c_#.deps.json
+C:\Users\Asus\Desktop\c_#\bin\Debug\net6.0\c_#.runtimeconfig.json
+C:\Users\Asus\Desktop\c_#\bin\Debug\net6.0\c_#.dll
+C:\Users\Asus\Desktop\c_#\bin\Debug\net6.0\c_#.pdb
+C:\Users\Asus\Desktop\c_#\obj\Debug\net6.0\c_#.dll
+C:\Users\Asus\Desktop\c_#\obj\Debug\net6.0\refint\c_#.dll
+C:\Users\Asus\Desktop\c_#\obj\Debug\net6.0\c_#.pdb
+C:\Users\Asus\Desktop\c_#\obj\Debug\net6.0\c_#.genruntimeconfig.cache
+C:\Users\Asus\Desktop\c_#\obj\Debug\net6.0\ref\c_#.dll
