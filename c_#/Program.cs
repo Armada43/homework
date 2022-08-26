@@ -1,106 +1,81 @@
 ﻿
-//// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
-// [345, 897, 568, 234] -> 2
 
 
-/*int[] numbers = new int[4];
+//Задача 35: Задайте одномерный массив из 123 случайных чисел. Найдите количество элементов массива, значения которых лежат в отрезке [10,99].
 
-void FillArray(int[] array, int min, int max)
-{
-  for (int i = 0; i<array.Length; i++ )
-  {
-    array[i] = new Random().Next(min, max);
-  }
-}
+//Пример для массива из 5, а не 123 элементов. В своём решении сделайте для 123
 
-void WriteArray(int[] array)
-{
-    for (int i = 0; i<array.Length; i++ )
-    {
-    Console.Write(array[i] + " ");
-  }
-  Console.WriteLine();
-}
+//[5, 18, 123, 6, 2] -> 1
 
-int QuantityPositive(int[] array)
-{
-    int quantity = 0;
-    for (int i = 0; i<array.Length; i++ )
-    {
-    if (array[i] % 2 == 1)
-    {
-      quantity++;
-    }
-  }
-  return quantity;
-}
+//[1, 2, 3, 6, 2] -> 0
 
-FillArray(numbers, 100, 1000);
-WriteArray(numbers);
-Console.WriteLine();
-
-int quantity = QuantityPositive(numbers);
-Console.WriteLine($"Количество чётных чисел в массиве: {quantity}");*/
+//[10, 11, 12, 13, 14] -> 5
 
 
-// Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
-// [3, 7, 23, 12] -> 19
-// [-4, -6, 89, 6] -> 0
-
-
-/*Console.Write($"Введи n+1 элементов массива: ");
-int numberElements = Convert.ToInt32(Console.ReadLine()); 
-
-int RandomNumbers(int numberElements, int min, int max)
-  {
-  int[] randomNumbers = new int[numberElements];
-  int sumElements = 0;
-  Console.Write("Получившийся массив: ");
-
-    for (int i = 1; i<randomNumbers.Length; i++ ){
-      randomNumbers[i] = new Random().Next(min, max);
-
-      Console.Write(randomNumbers[i] + " ");
-
-      if (i % 2 != 1)
-      {
-        sumElements = sumElements + randomNumbers[i];
-      }
-    }
-  return sumElements;
-  }
-
-int randomNumbers =  RandomNumbers(numberElements, 1, 10);
-
-Console.WriteLine($"\nСумма элементов, стоящих на нечётных позициях: {randomNumbers}");*/
-
-
-// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
-// [3 7 22 2 78] -> 76
-
-
-double[] arrayRealNumb = new double[10];
+/*int[] arrayRealNumb = new int[123];
+  int count = 0;
   for (int i = 0; i < arrayRealNumb.Length; i++ )
   {
     arrayRealNumb[i] = new Random().Next(1, 100);
     Console.Write(arrayRealNumb[i] + " ");
   }
-
-double maxNumb = arrayRealNumb[0];
-double minNumb = arrayRealNumb[0];
-
-  for (int i = 1; i < arrayRealNumb.Length; i++)
+   for (int i = 0; i < arrayRealNumb.Length; i++)
   {
-    if (maxNumb < arrayRealNumb[i])
+    if (arrayRealNumb[i] >= 10 && arrayRealNumb[i] <= 99)
     {
-      maxNumb = arrayRealNumb[i];
+     count+=1;
     }
-        if (minNumb > arrayRealNumb[i])
-    {
-      minNumb = arrayRealNumb[i];
-    }
+    
   }
+    
 
-  double decision = maxNumb - minNumb;
+ 
+Console.WriteLine($"\nколичество элементов массива в отрезке от 10 до 99: {count}");*/
 
-  Console.WriteLine($"\nразница между между максимальным ({maxNumb}) и минимальным({minNumb}) элементами: {decision}");
+//Задача 37: Найдите произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д. Результат запишите в новом массиве.
+
+//[1 2 3 4 5] -> 5 8 3
+
+//[6 7 3 6] -> 36 21
+
+using System;
+Console.Write("Введите массив через пробел: ");
+string elements = Console.ReadLine();
+int[] baseArray = GetArrayFromString(elements);
+Console.WriteLine(String.Join(" ", ResultArray(baseArray)));
+int[] GetArrayFromString(string stringArray)
+{
+  string[] nums = stringArray.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+  int[] res=new int[nums.Length];
+  for (int i=0; i<nums.Length; i++)
+  {
+    res[i]=int.Parse(nums[i]);
+  }
+  return res;
+}
+int[] ResultArray(int[] array)
+{
+  int size = array.Length / 2;
+  if (array.Length % 2 == 1) size++;
+  int [] result = new int[size];
+  for ( int i = 0; i < array.Length / 2; i++)
+  {
+    result[i] = array[i] * array[array.Length - 1 - i];
+  }
+  if (array.Length % 2 == 1) result[size-1] = array[array.Length / 2];
+  return result;
+}    
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
